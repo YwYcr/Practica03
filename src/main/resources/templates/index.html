@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Practica03</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <h2>Listado de estados</h2>
+        <a th:href="@{/estado/nuevo}">Nuevo Cliente</a>
+        <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Codigo Telefonico</th>
+                        <th>Capital</th>
+                        <th>Poblacion</th>
+                        <th>Eliminar</th>
+                        <th>Modificar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="estado : ${estados}">
+                        <td>[[${estado.nom_estado}]]</td>
+                        <td>[[${estado.tel_estado}]]</td>
+                        <td>[[${estado.cap_estado}]]</td>
+                        <td>[[${estado.pob_estado}]]</td>
+<!--                        <td><a th:href="@{/eliminarEstados/} + ${estados.idEstado}">Eliminar</td>
+                        <td><a th:href="@{/modificarEstados/} + ${estados.idEstado}">Modificar</td>-->
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>
